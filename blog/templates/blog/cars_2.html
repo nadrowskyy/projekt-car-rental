@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+</head>
+<body>
+    asfasf
+    {% for c in car %}
+     <p>Name: {{ c.1 }}</p>
+        <p>Model: {{ c.2 }}</p>
+        <p>Color: {{ c.3 }}</p>
+        <p>VIN: {{ c.4 }}</p>
+        <p>Fuel distance: {{ c.5 }}</p>
+        <img src="/static/{{ c.6 }}" width="300" height="170">
+    {% endfor %}
+</body>
+</html>

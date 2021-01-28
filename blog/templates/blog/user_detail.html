@@ -1,0 +1,99 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+.button3 {background-color: #F75348;}
+
+
+
+<!-- tabela-->
+
+#user {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#user td, #user th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 100px;
+
+}
+
+#user tr:nth-child(even){background-color: #f2f2f2;}
+
+#user tr:hover {background-color: #ddd;}
+
+#user th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+
+<table id="user" style="width:100%">
+
+        <tr>
+             <th>User ID</th>
+             <th>Imię</th>
+             <th>Nazwisko</th>
+             <th>Email</th>
+             <th>Telefon</th>
+             <th>Wiek</th>
+             <th>Płeć</th>
+             <th>Kategoria PJ</th>
+             <th>Ile lat PJ</th>
+
+        </tr>
+
+{% for u in user %}
+
+        <tr>
+             <td>{{ u.0 }}</td> <!-- ID -->
+             <td>{{ u.1 }}</td> <!-- imie -->
+             <td>{{ u.2 }}</td> <!-- nazwisko -->
+             <td>{{ u.3 }}</td> <!-- email -->
+             <td>{{ u.4 }}</td> <!-- telefon -->
+             <td>{{ u.5 }}</td> <!-- wiek -->
+             <td>{{ u.6 }}</td>  <!-- plec -->
+             <td>{{ u.7 }}</td> <!-- kat PJ -->
+             <td>{{ u.8 }}</td> <!-- data PJ -->
+        </tr>
+
+{%endfor%}
+
+</table>
+
+<form method="get" action="/admin/orders">
+    <button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+</body>
+</html>
+
+{%endblock%}

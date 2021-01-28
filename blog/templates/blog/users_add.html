@@ -1,0 +1,121 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+
+.submit {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+
+input[type=text] {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-style: ridge;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+input[type=number] {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+select {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-style: groove;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+.button3 {background-color: #F75348;}
+.submit1 {background-color: #4CAF50;}
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+    <form method="POST">
+    {% csrf_token %}
+    <label for="Name">Imię</label>
+    <input type="text" id="Name" name="Name">
+    <label for="Surname">Nazwisko</label>
+    <input type="text" id="Surname" name="Surname">
+    <label for="Email">Email</label>
+    <input type="text" id="Email" name="Email">
+    <label for="Phone">Telefon</label>
+    <input type="text" id="Phone" name="Phone">
+    <label for="Age">Wiek</label>
+    <input type="number" id="Age" name="Age">
+    <label for="Sex">Płeć</label>
+    <select id="Sex" name="Sex">
+        <option value="MAN">MAN</option>
+        <option value="WOMAN">WOMAN</option>
+    </select>
+    <label for="DriverLicenceCat">Kategoria PJ</label>
+    <input type="text" id="DriverLicenceCat" name="DriverLicenceCat"> <br><br>
+    <label for="SinceWhenDriverLicence">Ile lat PJ</label>
+    <input type="number" id="SinceWhenDriverLicence" name="SinceWhenDriverLicence"> <br><br>
+
+    <input type="submit" style="width:40%" class="button submit1" value="Zapisz zmiany">
+    <input type="reset" style="width:40%" class="button button2">
+</form>
+<br><br><br><br>
+
+<form method="get" action="/admin/users">
+    <button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+
+</body>
+</html>
+
+{%endblock%}

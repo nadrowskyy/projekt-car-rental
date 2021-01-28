@@ -1,0 +1,20 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+<div id="mini-car">
+		<div id="mini-car-image">
+			<img src="{% static details.0.4 %}" alt="Car" width="200px">
+		</div>
+		<div id="mini-car-name">
+			{{ details.0.1 }} {{ details.0.0 }}
+		</div>
+
+	</div>
+<section class="user-conatiner">
+		<div class="clear order-info">
+			<p>{{ details.0.2 }} {{ details.0.3 }}</p>
+			<p>Gratulacje! Twoje zamówienie zostało złożone.</p>
+			<p>Wysłaliśmy potwierdzenie zamówienia wraz ze szczegółami na podany adres e-mail</p>
+		</div>
+</section>
+{% endblock %}

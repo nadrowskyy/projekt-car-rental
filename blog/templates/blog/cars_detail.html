@@ -1,0 +1,90 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+<div>
+
+	 <div class="car-display">
+  <div class="car-display-image">
+	  <img src="{% static car_detail.14 %}" alt="Car">
+
+	</div>
+  <div class="car-display-info">
+	<div class="car-name"><h1>{{ car.2 }} {{ car.1 }}</h1></div>
+	<div class="grid-items">
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-paliwo.png' %}" alt="Rodzaj paliwa" class="info-icon">
+			<span id="paliwo">{{ car.7|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-klima.png' %}" alt="Rodzaj klimatyzacji" class="info-icon">
+			<span>{{ car_detail.5|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-drzwi-os.png' %}" alt="Ilość drzwi" class="info-icon">
+			<span>Ilość drzwi: {{ car_detail.4|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-nadwozie.png' %}" alt="Rodzaj napędu" class="info-icon">
+			<span>{{ car_detail.8|lower|capfirst }}</span>
+		</div>
+		<div class="info-item" alt="Rodzaj nadwozia">
+			<img src="{% static 'images/icons/icon-body-type.png' %}" alt="Rodzaj napedu" class="info-icon">
+			<span>{{ car.5|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-skrzynia.png' %}" alt="Rodzaj skrzyni biegów" class="info-icon">
+			<span>{{ car.6|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-srednie-spalanie.png' %}" alt="Średnie spalanie" class="info-icon">
+			<span><br>Spalanie miasto: {{ car_detail.1 }}l.<br>Spalanie w trasie: {{ car_detail.2 }}l.</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-poduszki.png' %}" alt="Ilość poduszek powietrznych" class="info-icon">
+			<span>{{ car_detail.9 }} poduszek powietrznych</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-bagaznik.png' %}" alt="Pojemność bagażnika" class="info-icon">
+			<span>Pojemność bagażnika: {{ car_detail.3 }}l.</span>
+		</div>
+	</div>
+		</div>
+ <div class="car-display-more">
+	  <div class="button-more">
+		  <a href="/rent/insurance{{ car.0 }}"><span>WYNAJMIJ</span></a>
+	</div>
+	 <span>{{ segment.0.3 }} zł za dzień wynajmu</span>
+		  <br>
+		  <span>{{ segment.0.2 }} zł kaucji</span>
+  </div>
+
+
+
+</div>
+
+	<!-- Szczegóły auta !-->
+
+<div class="car-details">
+	<div id="additional">
+	<h3>Dlaczego akurat to auto?</h3>
+	<ul>
+		<li>Pojemność silnika: {{ car_detail.6 }}  cm&#179</li>
+		<li>Moc silnika: {{ car_detail.7 }} KM</li>
+		<li>Numer VIN: {{ car_detail.13 }}</li>
+		{% if car_detail.12 == 1 %}
+			<li>Podgrzewane lusterka: Tak</li>
+		{% endif %}
+	</ul>
+	</div>
+	<div id="car-detail-description">{{ car_detail.16 }}
+
+	<br><br><br>
+	<a target="_blank" href="{{ car_detail.15 }}">Zobacz to auto w serwisie autocentrum</a>
+	<br><br>
+	</div>
+</div>
+
+
+</div>
+
+{% endblock %}

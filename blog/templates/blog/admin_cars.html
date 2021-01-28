@@ -1,0 +1,114 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+.button3 {background-color: #F75348;}
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+
+
+
+<!-- tabela-->
+
+#cars {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#cars td, #cars th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 100px;
+
+}
+
+#cars tr:nth-child(even){background-color: #f2f2f2;}
+
+#cars tr:hover {background-color: #ddd;}
+
+#cars th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<table id="cars" style="width:100%">
+
+        <tr>
+
+             <th>Car ID</th>
+             <th>Model</th>
+             <th>Marka</th>
+             <th>Segment</th>
+             <th>Zajętość</th>
+             <th>Nadwozie</th>
+             <th>Skrzynia</th>
+             <th>Paliwo</th>
+             <th>Edycja</th>
+
+        </tr>
+
+{% for c in cars %}
+
+
+        <tr>
+             <td>{{ c.0 }}</td> <!-- ID -->
+             <td>{{ c.1 }}</td> <!-- model -->
+             <td>{{ c.2 }}</td> <!-- marka -->
+             <td>{{ c.3 }}</td> <!-- segment -->
+             <td>{{ c.4 }}</td> <!-- if rented -->
+             <td>{{ c.5|lower|capfirst }}</td> <!-- nadwozie -->
+             <td>{{ c.6|lower|capfirst }}</td>  <!-- skrzynia -->
+             <td>{{ c.7|lower|capfirst }}</td> <!-- paliwo -->
+            <td><a href="/admin/cars/{{ c.0 }}"> <img src="{% static 'images/icons/edit.png' %}" style="vertical-align:middle" alt="edit" class="info-icon"> </td>
+        </tr>
+
+
+{% endfor %}
+
+    </table>
+
+
+<form method="get" action="/admin/cars/0">
+<button style="width:40%" class="button button1">Dodaj</button>
+</form>
+
+
+<form method="get" action="/admin">
+<button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+
+</body>
+</html>
+
+{%endblock%}

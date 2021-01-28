@@ -1,0 +1,132 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+<div id="mini-car">
+		<div id="mini-car-image">
+			<img src="{% static car_detail.0.0 %}" alt="Car" width="200px">
+		</div>
+		<div id="mini-car-name">
+			{{ car.0.2 }} {{ car.0.1 }}
+		</div>
+
+	</div>
+
+<section class="user-conatiner">
+		<div class="additional-info">
+
+			<p><span class="order-detail-price">{{ details.0 }}</span> X <span class="order-detail-price">{{ details.1 }} zł</span></p>
+			<p>dni wynajmu X cena postawowa</p>
+			<p><span class="order-detail-price">+ {{ details.2 }} zł</span></p>
+			<p>kaucja</p>
+			<p><span class="order-detail-price">+ {{ details.3 }} zł</span></p>
+			<p><b>{{ details.4 }}</b> pakiet ubezpieczeniowy</p>
+			<p><span class="order-detail-price">+ {{ details.5 }} zł</span></p>
+			<p>dodatkowy fotelik dla dziecka</p>
+			<p><span class="order-detail-price">+ {{ details.6 }} zł</span></p>
+			<p>używanie auta za granicami polski</p>
+			<p><span class="order-detail-price">+ {{ details.7 }} zł</span></p>
+			<p>używanie przez więcej niż jednego użytkownika</p>
+			<hr>
+			<p><span class="order-detail-price">{{ details.8 }} zł</span></p>
+			<p>cena końcowa</p>
+
+
+		</div>
+    <div class="user-data">
+		<form method="POST">
+		<label for="name">IMIĘ</label><br>
+			<input type="text" id="name" name="name" placeholder="* Wpisz swoje imię" required="required">
+			<br>
+			<br>
+			<label for="surname">NAZWISKO</label><br>
+			<input type="text" id="surname" name="surname" placeholder="* Wpisz swoje nazwisko" required="required">
+			<br>
+			<br>
+			<label for="email">EMAIL</label><br>
+			<input type="text" id="email" name="email" placeholder="* Wpisz swój e-mail" required="required">
+			<br>
+			<br>
+			<label for="phone">TELEFON</label><br>
+			<input type="text" id="phone" name="phone" placeholder="* Wpisz swój nr kontaktowy" required="required">
+			<br>
+			<br>
+			<label for="age">WIEK</label><br>
+			<input type="number" id="age" name="age" placeholder="* Podaj swój wiek" min="21" required="required">
+			<br>
+			<br>
+			<label for="sex">PŁEĆ</label><br>
+			<select id="sex" name="sex">
+				<option value="man">MĘŻCZYZNA</option>
+				<option value="woman">KOBIETA</option>
+			</select>
+			<br>
+			<br>
+			<label for="licence">KAT. PRAWA JAZDY</label><br>
+			<select id="licence" name="licence">
+				<option value="B">B</option>
+				<option value="B+E">B+E</option>
+			</select>
+			<br>
+			<br>
+			<label for="licence-date">LICZBA PEŁNYCH LAT POSIADANIA PRAWA JAZDY</label><br>
+			<input type="number" id="licence-date" name="licence-date" placeholder="* Podaj liczbę lat" min="1" required="required">
+			<br>
+			<br>
+			<label for="door_to_door">
+			<input type="checkbox" id="door_to_door" name="door_to_door">
+				Czy opcja door to door?
+			</label>
+			<br>
+			<label for="street">ULICA</label><br>
+			<input type="text" id="street" name="street" placeholder=" Podaj nazwę ulicy">
+			<br>
+			<br>
+			<label for="house-number">NR DOMU</label><br>
+			<input type="text" id="house-number" name="house-number" placeholder=" Podaj numer domu">
+			<br>
+			<br>
+			<label for="flat-number">NR MIESZKANIA</label><br>
+			<input type="text" id="flat-number" name="flat-number" placeholder=" Podaj number mieszkania">
+			<br>
+			<br>
+			<label for="postcode">KOD POCZTOWY</label><br>
+			<input type="text" id="postcode" name="postcode" placeholder=" Podaj kod pocztowy">
+			<br>
+			<br>
+			<label for="city">MIASTO</label><br>
+			<input type="text" id="city" name="city" placeholder=" Podaj miasto">
+			<br>
+			<span class="grey-statement"><p>Administratorem danych osobowych jest Car Net Polska sp. z o.o. z siedzibą we
+				Wrocłaiu (54-312) przy ul. Grunwaldzkiej 4. Dane osobowe przetwarzane są w
+				celu zawarcia i realizacji umowy w oparciu o Ogólne Warunki Najmu Pojazdu.
+				Każdy ma prawo do żądania dostępu do swoich danych, ich sprostowania, usunięcia
+				lub ograniczenia przetwarzania, a także prawo wniesienia skargi do Prezesa Urzędu
+				Ochrony Danych Osobowych. Ponadto każdemu przysługuje prawo wniesienia sprzeciwu
+				wobec przetwarzania danych osobowych w przypadkach określonych w art. 21 RODO.
+				Więcej informacji na temat przetwarzania danych osobowych można uzyskać pod a
+				dresem https://carnet.pl/klauzule-informacyjne lub kontaktując się z
+				administratorem: iod@carnet.pl.</p></span>
+			<br>
+			<label for="statement-1">
+			<input type="checkbox" id="statement-1" name="statement-1" required="required">
+				* Oświadczam, że wszystkie osoby kierujące pojazdem posiadają prawo jazdy minimum rok.
+			</label>
+			<br>
+			<label for="statement-2">
+			<input type="checkbox" id="statement-2" name="statement-2" required="required">
+				* Oświadczam, że wszystkie osoby kierujące pojazdem mają ukończone 21 lat
+			</label>
+			<br>
+			<label for="statement-3">
+			<input type="checkbox" id="statement-3" name="statement-3" required="required">
+				* Akceptuję regulamin - Ogólne Warunku Najmu Pojazdu.
+			<a target="_blank" href="{% static 'files/OWNP.pdf' %}">Regulamin.pdf</a>
+			</label>
+			<br>
+			<br>
+			{% csrf_token %}
+			<button type="submit">WYNAJMIJ</button>
+		</form>
+    </div>
+</section>
+{% endblock %}

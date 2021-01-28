@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CarRent</title>
+<link href="{% static 'css/multiColumnTemplate.css' %}" rel="stylesheet">
+<style type="text/css">
+</style>
+
+<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'js/carnet.js' %}"></script>
+
+</script>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="primary_header">
+        <h1 class="title"><a href="{% url 'main' %}"><img src="{% static 'images/logo.png' %}" width="200" height="80" alt=""/></a></h1>
+    </div>
+
+
+<!--
+    <div class="wynajem">
+		<h2 class="wynajem_title"><strong>Wynajmij</strong> se byczku auto</h2>
+	  </div>
+ !-->
+  </header>
+
+<h2 style="text-align: center;"><span style="color: #ff0000;"><strong>PANEL ADMINISTRACYJNY</strong></span></h2>
+
+      {% block content %}{% endblock %}
+
+
+	<div class="row">
+
+<!--
+    <div class="columns">
+      <p class="thumbnail_align"> <img src="images/bkg_06.jpg" alt="" class="thumbnail"/> </p>
+      <h4>TITLE</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+    </div>
+    <div class="columns">
+      <p class="thumbnail_align"> <img src="images/bkg_06.jpg" alt="" class="thumbnail"/> </p>
+      <h4>TITLE</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+    </div>
+    <div class="columns">
+      <p class="thumbnail_align"> <img src="images/bkg_06.jpg" alt="" class="thumbnail"/> </p>
+      <h4>TITLE</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+    </div>
+    <div class="columns">
+      <p class="thumbnail_align"> <img src="images/bkg_06.jpg" alt="" class="thumbnail"/> </p>
+      <h4>TITLE</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+    </div>
+!-->
+
+
+  </div>
+<!--
+  <div class="row blockDisplay">
+    <div class="column_half left_half">
+      <h2 class="column_title">LEFT COLUMN</h2>
+    </div>
+    <div class="column_half right_half">
+      <h2 class="column_title">RIGHT COLUMN</h2>
+    </div>
+  </div>
+
+!-->
+
+  <footer class="secondary_header footer">
+    <div class="copyright">&copy;2020 - <strong>Projekt - Bazy danych</strong></div>
+  </footer>
+</div>
+</body>
+</html>

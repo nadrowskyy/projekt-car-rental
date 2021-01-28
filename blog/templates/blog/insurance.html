@@ -1,0 +1,72 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+<div>
+
+<div id="mini-car">
+		<div id="mini-car-image">
+			<img src="{% static car_detail.0.0 %}" alt="Car" width="200px">
+		</div>
+		<div id="mini-car-name">
+			{{ car.0.2 }} {{ car.0.1 }}
+		</div>
+	
+	</div>
+	
+	<form id="packet-form" action="/rent/order{{ car.0.0 }}" method="GET">
+		<div id="all-packets">
+		  <div id="desc-packet1">
+			  <ul class="packet-price">
+				<li class="packet-grey"><input type="radio" id="packet1" value="{{ insurance_1.0 }}" name="packet-ch" required></li>
+				<li class="packet-header">Pakiet {{ insurance_1.1|lower }}</li>
+				<li><span id="price-p1">{{ insurance_1.3 }}</span> zł</li>
+				{% for detail in insurance_1.2 %}
+				<li>{{ detail }}</li>
+				{% endfor %}
+			  </ul>  
+		  </div>
+			<div id="desc-packet2">
+				<ul class="packet-price">
+			    <li class="packet-grey"><input type="radio" id="packet2" name="packet-ch" value="{{ insurance_2.0 }}"></li>
+				<li class="packet-header">Pakiet {{ insurance_2.1|lower }}</li>
+				<li><span id="price-p2">{{ insurance_2.3 }}</span> zł</li>
+				{% for detail in insurance_2.2 %}
+				<li>{{ detail }}</li>
+				{% endfor %}
+			  </ul>
+			</div>
+			<div id="desc-packet3">
+			   <ul class="packet-price">
+				<li class="packet-grey"><input type="radio" id="packet3" name="packet-ch" value="{{ insurance_3.0 }}"></li>
+				<li class="packet-header">Pakiet {{ insurance_3.1|lower }}</li>
+				<li><span id="price-p3">{{ insurance_3.3 }}</span> zł</li>
+				{% for detail in insurance_3.2 %}
+				<li>{{ detail }}</li>
+				{% endfor %}
+			  </ul>
+			 </div>
+		</div>
+	<div id="extra-services">
+		<input type="checkbox" id="extra_seat" name="extra_seat" value=20>
+		<label for="extra_seat">Dodatkowy fotelik dla dziecka (+ 20 zł)</label>
+		<br>
+		<input type="checkbox" id="if_abroad" name="if_abroad" value=40>
+		<label for="if_abroad">Czy pojazd będzie używany poza granicami Polski (+ 40 zł)</label>
+		<br>
+		<input type="checkbox" id="if_more_users" name="if_more_users" value=10>
+		<label for="if_more_users">Czy pojazd będzie używany przez więcej niż jednego użytkownika (+ 10zł)</label>
+	</div>
+	
+
+	<div id="summary-prices">
+		<span id="rent-price-text">Cena za wynajem: </span><p id="price-total">{{ segment.0.2 }}</p>
+		<div id="button-next">
+			<button type="submit">DALEJ</button>
+		</div>
+	</div>
+	</form>
+	</div>
+
+    </div>
+
+{% endblock %}

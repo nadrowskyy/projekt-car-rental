@@ -1,0 +1,9 @@
+{% extends "blog/carrent_szablon.html" %}
+{% block content %}
+    {{ block.super }} <!-- DOPISUJE PONIŻSZY KOD A NIE NADPISUJE !-->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Wynajmij</button>
+</form>
+{% endblock %}

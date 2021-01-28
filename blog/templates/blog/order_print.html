@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pl">
+    <title>Wydruk zamówienia</title>
+    <link href="../../../static/css/multiColumnTemplate.css" rel="stylesheet">
+    <link href="{% static 'css/multiColumnTemplate.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="order-container">
+        <div class="c-data">
+            <h3>Dane klienta</h3>
+            <p>Numer zamówienia</p>
+            <p>{{ order.0.0 }}</p>
+            <br>
+            <p>{{ order.0.1 }} {{ order.0.2 }}</p>
+            <p>{{ order.0.3 }}</p>
+            <p>{{ order.0.4 }}</p>
+            <p>{{ order.0.5 }}, {{ order.0.6 }}</p>
+        </div>
+
+        <div class="c-data">
+            <h3>Dane do przelewu</h3>
+            <p>Carnet sp. z.o.o</p>
+            <p>Nr konta</p>
+            <p>12 1234 1234 1234 1234 1234 1234</p>
+            <br>
+            <p>ul. Grunwaldzka 4</p>
+            <p>53-310, Wrocław</p>
+
+        </div>
+
+        <div class="c-data">
+            <h3>Dane wynajmu</h3>
+            <p>Złożenie zamówienia</p>
+            <p>{{ order.0.7 }}</p>
+            <p>Początek wynajmu</p>
+            <p>{{ order.0.8 }}</p>
+            <p>Koniec wynajmu</p>
+            <p>{{ order.0.9 }}</p>
+
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="order-data">
+            <div class="order-list grey-order">
+                <hr>
+                <ul type="square">
+                    <li>Samochód: {{ order.0.10 }} {{ order.0.11 }}</li>
+                    <li>Cena bazowa: {{ order.0.12 }}</li>
+                    <li>Kaucja: {{ order.0.13 }}</li>
+                    <li>Ilość dni: {{ order.0.14 }}</li>
+                    <li>Pakiet ubezpieczeniowy {{ order.0.15 }}: {{ order.0.16 }}</li>
+                    <li>Fotelik dla dziecka: {{ order.0.17 }}</li>
+                    <li>Użytkowanie za granicą: {{ order.0.18 }}</li>
+                    <li>Dodatkowy użytkownik: {{ order.0.19 }}</li>
+                    <hr>
+                    <li>Koszt: : {{ order.0.20 }}</li>
+                </ul>
+            </div>
+            <!--<div class="order-list">
+                <ul>
+                    <li>Toyota Corolla</li>
+                    <li>452 zł</li>
+                    <li>5</li>
+                    <li>99 zł</li>
+                    <li>10 zł</li>
+                    <li>20 zł</li>
+                    <li>10 zł</li>
+                    <li>6315 zł</li>
+                </ul>
+            </div>!-->
+
+        </div>
+
+    </section>
+
+
+
+
+
+</body>
+</html>

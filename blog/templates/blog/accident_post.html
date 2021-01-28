@@ -1,0 +1,40 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+
+
+<section class="user-container">
+
+    <div class="additional-info">
+        <h3>{{ order.0.3 }} {{ order.0.4 }}</h3>
+        <h4>Wypożyczyłeś</h4>
+        <p>{{ order.0.0 }} {{ order.0.1 }}</p>
+        <img src="{% static order.0.2 %}" alt="Car" width="200px">
+
+    </div>
+
+
+    <div class="user-data">
+        <form method="post" enctype="multipart/form-data" id="user-form">
+            <label for="date">Data wystąpienia awarii</label>
+            <br>
+            <input type="date" id="date" name="date" required>
+            <br>
+            <br>
+            <label for="description">Opisz usterkę</label>
+            <br>
+            <textarea rows="6" cols="40" form="user-form" id="description" name="description" required></textarea>
+            <br>
+            <br>
+            <label for="img1">Zdjęcia usterki</label>
+            <br>
+            <input type="file" id="img1" name="img1" accept=".jpg, .jpeg, .png, .pdf" multiple required>
+            <br>
+            <br>
+            {% csrf_token %}
+            <input type="submit" value="Prześlij">
+        </form>
+    </div><!-- user-data !-->
+
+</section>
+{% endblock %}

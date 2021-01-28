@@ -1,0 +1,24 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+
+<section class="user-container">
+
+     <div class="additional-info">
+
+    </div>
+
+    <div class="user-data">
+        <form method="get">
+
+            <label for="order-number">Podaj numer zamówienia</label>
+            <br>
+            <input type="text" id="order-number" name="order-number">
+            <br>
+            <br>
+            <input type="submit" value="Przejdź dalej">
+
+        </form>
+    </div>
+</section>
+{% endblock %}

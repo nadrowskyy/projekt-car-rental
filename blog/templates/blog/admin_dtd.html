@@ -1,0 +1,104 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+.button3 {background-color: #F75348;}
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+
+
+
+<!-- tabela-->
+
+#dtd {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#dtd td, #dtd th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 100px;
+
+}
+
+#dtd tr:nth-child(even){background-color: #f2f2f2;}
+
+#dtd tr:hover {background-color: #ddd;}
+
+#dtd th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<table id="dtd" style="width:100%">
+
+        <tr>
+
+             <th>Order ID</th>
+             <th>Ulica</th>
+             <th>Nr domu</th>
+             <th>Nr lokalu</th>
+             <th>Kod pocztowy</th>
+             <th>Miejscowość</th>
+             <th>Edycja</th>
+
+        </tr>
+
+{% for d in dtd %}
+
+
+        <tr>
+             <td>{{ d.0 }}</td>
+             <td>{{ d.1 }}</td>
+             <td>{{ d.2 }}</td>
+             <td>{{ d.3 }}</td>
+             <td>{{ d.4 }}</td>
+             <td>{{ d.5 }}</td>
+            <td><a href="/admin/dtd/{{ d.0 }}"> <img src="{% static 'images/icons/edit.png' %}" style="vertical-align:middle" alt="edit" class="info-icon"> </td>
+        </tr>
+
+
+{% endfor %}
+
+    </table>
+
+
+<form method="get" action="/admin/orders">
+<button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+</body>
+</html>
+
+{%endblock%}

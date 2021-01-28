@@ -1,0 +1,887 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif !important;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+a:link {color: black;}      /* unvisited link */
+a:visited {color: black;}   /* visited link */
+a:hover {color: black;}     /* mouse over link */
+a:active {color: black;}    /* selected link */
+a {
+    text-decoration: none;
+}
+#car-detail-description a {
+    text-decoration: underline;
+}
+
+.container {
+	background-color: #FFFFFF;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom-width: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+.row {
+	width: 100%;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	display: inline-block
+}
+.row.blockDisplay {
+	display: block;
+}
+.column_half {
+	width: 50%;
+	float: left;
+	margin-top: 0px;
+}
+.columns {
+	width: 25%;
+	float: left;
+	font-family: "Source Sans Pro";
+	color: #A5A5A5;
+	line-height: 24px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: justify;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.row .columns p {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.container .columns h4 {
+	text-align: center;
+	color: #01B2D1;
+}
+.primary_header {
+	width: 100%;
+	background-color: #555555;
+	padding-top: 4px;
+	padding-bottom: 10px;
+	clear: left;
+}
+.secondary_header {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #B3B3B3;
+	clear: left;
+}
+.container .primary_header ul {
+	margin-top: 0%;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	width: 100%;
+}
+.primary_header ul li {
+	list-style: none;
+	float: left;
+	margin-right: auto;
+	margin-top: 0px;
+	font-family: "Source Sans Pro";
+	font-weight: normal;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	margin-left: auto;
+	text-align: right;
+	width: 16%;
+	transition: all 0.3s linear;
+}
+.primary_header ul li:hover {
+	color: #717070;
+	cursor: pointer;
+}
+.left_article {
+	background-color: #FFFFFF;
+	width: 60%;
+	float: left;
+	font-family: "Source Sans Pro";
+	color: #343434;
+	padding-bottom: 15px;
+}
+.noDisplay {
+	display: none;
+}
+.container .left_article h3 {
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 5%;
+	color: #717070;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.container .left_article p {
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: justify;
+	line-height: 24px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	color: #B3B3B3;
+}
+.right_article {
+	width: 40%;
+	float: left;
+	background-color: #F6F6F6;
+}
+.container .right_article ul {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.right_article ul li {
+	font-family: "Source Sans Pro";
+	list-style: none;
+	text-align: center;
+	background-color: #B3B3B3;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 0px;
+	transition: all 0.3s linear;
+	border-left: 5px solid #717070;
+}
+.right_article ul li:hover {
+	background-color: #717070;
+	cursor: pointer;
+}
+.footer {
+	background-color: #717070;
+}
+.title {
+	font-weight: bold;
+	font-style: normal;
+	font-family: "Source Sans Pro";
+	text-align: center;
+	padding-left: 15px;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+}
+.placeholder {
+	/* [disabled]max-width: 400px;
+*/
+	/* [disabled]max-height: 200px;
+*/
+	width: 100%;
+	padding-top: 30px;
+	/* [disabled]padding-left: 19px;
+*/
+	padding-bottom: 30px;
+	height: 100%;
+}
+.left_half {
+	background-color: #52BAD5;
+}
+.container .column_half.left_half h2 {
+	color: #FFFFFF;
+	font-family: "Source Sans Pro";
+	text-align: center;
+}
+.right_half {
+	background-color: #01B2D1;
+	color: #FFFFFF;
+	font-family: "Source Sans Pro";
+	text-align: center;
+	font-weight: bold;
+}
+.column_title {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.copyright {
+	text-align: center;
+	background-color: #717070;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	border-top-width: 2px;
+	font-family: "Source Sans Pro";
+}
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+/*
+@media (max-width: 320px) {
+.primary_header ul li {
+	float: none;
+	margin-top: 28px;
+	margin-left: 0px;
+	width: 100%;
+}
+.container .primary_header ul {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	height: auto;
+	width: 100%;
+	text-align: center;
+}
+.secondary_header {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 1px;
+	padding-bottom: 40px;
+}
+.left_article {
+	width: 100%;
+	height: auto;
+}
+.right_article {
+	width: 100%;
+	height: auto;
+}
+.placeholder {
+	width: 100%;
+	margin-top: 22PX;
+	margin-right: 0px;
+	margin-bottom: 22PX;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	max-width: 400px;
+	max-height: 200px;
+	height: auto;
+}
+.columns {
+	width: 100%;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0PX;
+	padding-right: 0PX;
+	padding-bottom: 0PX;
+	padding-left: 0PX;
+}
+.columns p {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.column_half.left_half {
+	width: 100%;
+}
+.column_half.right_half {
+	width: 100%;
+}
+.copyright {
+	padding-top: 25px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+.container .left_article h3 {
+	margin-top: 30px;
+}
+.social .social_icon img {
+	width: 20%;
+}
+.container .secondary_header {
+}
+}
+*/
+/*@media (min-width: 321px) and (max-width: 768px) {
+.secondary_header ul li {
+	float: none;
+	margin-top: 28px;
+	margin-left: 0px;
+	width: 100%;
+}
+.container .secondary_header ul {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	height: auto;
+	width: 100%;
+	text-align: center;
+}
+.secondary_header {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 1px;
+	padding-bottom: 40px;
+}
+.left_article {
+	width: 100%;
+	height: auto;
+}
+.right_article {
+	width: 100%;
+	height: auto;
+	padding-bottom: 25px;
+}
+.placeholder {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+}
+.columns {
+	width: 100%;
+	margin-top: 6px;
+	margin-right: 0px;
+	margin-bottom: 6px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.columns p {
+	padding-left: 14px;
+	padding-right: 14px;
+}
+.column_half.left_half {
+	width: 100%;
+}
+.column_half.right_half {
+	width: 100%;
+}
+}*/
+/*
+@media (min-width: 769px) and (max-width: 1000px) {
+.secondary_header {
+	overflow: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.secondary_header ul li {
+	margin-top: 10px;
+	margin-right: 7%;
+	margin-bottom: 10px;
+	margin-left: 7%;
+}
+.left_article {
+	height: auto;
+}
+.right_article {
+	height: auto;
+	padding-bottom: 27px;
+}
+.placeholder {
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.columns {
+	width: 50%;
+	float: left;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+.container .columns p {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+}*/
+
+.thumbnail {
+	width: 70px;
+	border-radius: 200px;
+	height: 70px;
+	margin-left: auto;
+}
+.thumbnail_align {
+	text-align: center;
+}
+.social {
+	text-align: center;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	width: 100%;
+	background-color: #414141;
+	clear: both;
+	overflow: auto;
+}
+.social_icon {
+	width: 25%;
+	text-align: center;
+	float: left;
+	transition: all 0.3s linear;
+	line-height: 0px;
+	padding-top: 7px;
+}
+.container .social .social_icon:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+#menu {
+}
+.glowna-zawartosc {
+}
+.filtr {
+    float: left;
+    width: 20%;
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+.wyswietlane {
+    float: left;
+    width: 75%;
+    margin-bottom: 10px;
+}
+.wynajem {
+	width: 100%;
+	height: 700px;
+	background-image: url(../images/wynajem.jpg);
+	background-size: 1700px;
+}
+.wynajem_title {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	text-align: center;
+	font-size: 50px;
+	color: whitesmoke;
+	margin-top: auto;
+	padding-top: 300px;
+}
+
+/* Style CSS dla pojedynczego auta z listy */
+
+.car-display {
+	padding-bottom: 330px;
+}
+.car-display-image {
+	float: left;
+	width: 25%;
+	/* Nie pozwala na wyświetlanie elementów poza granicami diva*/
+	overflow: hidden;
+}
+.car-display-more {
+	float: right;
+	width: 25%;
+}
+.car-display-image img {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	margin-top: 50px;
+  	width: 80%;
+}
+.car-display-info {
+	float: left;
+	width: 40%;
+	padding-left: 70px;
+}
+.car-display-info .car-name {
+	padding-left: 15px;
+}
+.button-more {
+	padding: 100px 70px;
+	transition: all 0.3s linear;
+}
+
+.button-more p {
+    font-size: 15px;
+}
+
+.price-1 {
+    padding-top: 8px;
+}
+
+.button-more span {
+	background: rgba(35,189,249,1.00);
+	padding: 20px 30px;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+.button-more span:hover {
+	filter: brightness(85%);
+	cursor: pointer;
+}
+.grid-items {
+	display: grid;
+	grid-template-columns: 150px 150px 150px;
+	grid-template-rows: 50px 50px 50px;
+	padding: 10px;
+}
+.info-icon {
+	width: 15%;
+}
+
+/* Poniżej style css dla szczegółów auta */
+
+.car-details {
+	padding-top: 40px;
+}
+#additional {
+	float: left;
+	width: 28%;
+	font-size: 18px;
+	padding-left: 30px;
+}
+#car-detail-description {
+	padding-top: 20px;
+	float: left;
+	width: 65%;
+	font-size: 18px;
+}
+
+
+/* Insurance packets styling */
+
+
+
+/* Create three columns of equal width */
+#all-packets {
+	padding-top: 10px;
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 450px;
+}
+
+
+#desc-packet1 {
+	width: 30%;
+	float: left;
+	padding-right: 40px;
+}
+#desc-packet2 {
+	width: 30%;
+	float: left;
+}
+#desc-packet3 {
+	width: 30%;
+	float: right;
+}
+
+
+/* Style the list */
+.packet-price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.packet-price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.packet-price li {
+  border-bottom: 2px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Grey list item */
+.packet-price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+.packet-header {
+	color: white;
+	background:rgba(113,112,112,1.00);
+}
+
+#extra-services {
+	margin-top: 110px;
+	margin-left: 160px;
+}
+
+#mini-car {
+	width: 100%;
+	background: rgba(236,239,241,1.00);
+	height: 130px;
+}
+#mini-car-image {
+	float: left;
+	overflow: hidden;
+	margin-left: 250px;
+	margin-top: 10px;
+}
+#mini-car-name {
+	float: left;
+	margin-left: 190px;
+	margin-top: 40px;
+	font-size: 40px;
+	font-weight: 4px;
+}
+#summary-prices {
+	display: inline-block;
+	margin-left: 105px;
+	margin-bottom: 40px;
+	margin-top: 50px;
+	width: 1200px;
+	background:rgba(113,112,112,1.00);
+	color: aliceblue;
+	height: 130px;
+
+}
+#price-total {
+	display: inline-block;
+	padding-left: 300px;
+	font-size: 40px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+#rent-price-text {
+	display: inline-block;
+	padding-left: 50px;
+}
+
+#button-next {
+	padding-left: 420px;
+	display: inline-block;
+	transition: all 0.3s linear;
+}
+#button-next button {
+	background: rgba(35,189,249,1.00);
+	padding: 20px 30px;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	letter-spacing: 2px;
+	border: 0;
+}
+#button-next button:hover {
+	filter: brightness(85%);
+	cursor: pointer;
+}
+
+/* Order Styling */
+
+.user-container {
+}
+
+.additional-info, .user-data {
+    padding: 50px 50px 50px 150px;
+}
+
+.additional-info {
+    float: left;
+    width: 40%;
+}
+
+.user-data {
+    float: left;
+    width: 60%;
+    padding-left: 1px;
+}
+
+.user-data label {
+    font-size: 13px;
+    color: grey;
+}
+
+.grey-statement {
+    font-size: 13px;
+    color: grey;
+}
+
+.order-detail-price {
+    font-size: 30px;
+}
+
+/* Order print Styling */
+
+.order-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.c-data {
+    float: left;
+    width: 30%;
+    margin: 20px;
+}
+
+.order-list ul li {
+    display: inline-block;
+    padding: 15px;
+    width: 130px;
+}
+
+.grey-order {
+    background: grey;
+}
+
+/* Styling for main container on main site */
+
+.top-image {
+    background-image: url("../../../static/images/wynajem.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 660px;
+}
+
+.search-panel-button {
+    float: left;
+}
+
+.search-panel {
+    width: 535px;
+    height: 385px;
+    background: #007bff;
+    margin-left: 170px;
+    margin-top: 100px;
+    float: left;
+    box-shadow: 4px 8px 15px 1px black;
+}
+
+.pick-date, .return-date {
+    float: left;
+    padding: 150px 60px 0 70px;
+
+}
+
+.top-image .submit-button {
+    height: 100px;
+    background: #17a2b8;
+    border: 0;
+    width: 535px;
+    float: left;
+    margin-left: -535px;
+    margin-top: 510px;
+    box-shadow: 4px 8px 15px 1px black;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+
+.top-image .submit-button:hover {
+	filter: brightness(85%);
+	cursor: pointer;}
+
+/* Message alert */
+
+.alert {
+    border: 5px solid #f44336;
+    color: black;
+    background-color: #f44336;
+    width: 60%;
+    margin: 10px auto 0 auto;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+/* Order finish Styling */
+
+.order-info {
+    margin: 0 auto;
+    font-size: 48px;
+    text-align: center;
+}
+
+
+
+
+/* Flota Styling */
+
+.center-cars {
+    padding-left: 200px;
+}
+
+/* FAQ Styling */
+
+.faq ul li {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+.faq h1 {
+    text-align: center;
+}
+
+/* Kontakt Styling */
+
+.contact-data {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+

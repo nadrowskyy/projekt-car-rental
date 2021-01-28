@@ -1,0 +1,121 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+<section class="glowna-zawartosc">
+    <div class="filtr">
+        <form action="/cars/" method="GET">
+			<label for="segment">Wybierz segment: </label>
+			<select id="segment" name="segment">
+				<option value="ALL">Wszystkie</option>
+				<option value=1>A</option>
+				<option value=2>B</option>
+				<option value=3>C</option>
+				<option value=4>C+</option>
+				<option value=5>D</option>
+				<option value=6>E</option>
+				<option value=7>F</option>
+				<option value=8>S</option>
+			</select><br><br>
+			<label for="body_type">Wybierz typ nadwozia: </label>
+			<select id="body_type" name="body_type">
+				<option value="ALL">Wszystkie</option>
+				<option value="SEDAN">Sedan</option>
+				<option value="COMBI">Kombi</option>
+				<option value="COUPE">Coupe</option>
+				<option value="CABRIO">Cabriolet</option>
+				<option value="HATCHBACK">Hatchback</option>
+				<option value="LIMUZYNA">Limuzyna</option>
+			</select><br><br>
+			<label for="transmission">Wybierz skrzynię biegów: </label>
+			<select id="transmission" name="transmission">
+				<option value="ALL">Wszystkie</option>
+				<option value="AUTOMAT">Automatyczna</option>
+				<option value="MANUAL">Manualna</option>
+				<option value="SEMIMANUAL">Półautomatyczna</option>
+			</select><br><br>
+			<label for="fuel">Wybierz rodzaj paliwa: </label>
+			 <select id="fuel" name="fuel">
+				<option value="ALL">Wszystkie</option>
+				<option value="Benzyna">Benzyna</option>
+				<option value="DIESEL">Diesel</option>
+				<option value="ELECTRIC">Elektryczny</option>
+			</select><br><br>
+			<label for="seats">Wybierz ilość miejsc: </label>
+			<input id="seats" name="seats" type="number" min="2" max="9" value="5">
+			<br><br>
+			<button type="submit">Filtruj</button>
+		</form>
+	</div>
+    <div class="wyswietlane">
+
+		{% if messages %}
+			{% for message in messages %}
+			<div class="alert alert-danger" role="alert">
+				{{ message }}
+			</div>
+			{% endfor %}
+		{% endif %}
+
+    {% for c in car %}
+        <div class="car-display">
+  <div class="car-display-image">
+	  <img src="{% static c.27 %}" alt="Car">
+	</div>
+  <div class="car-display-info">
+	<div class="car-name"><h1>{{ c.6 }} {{ c.5 }}</h1></div>
+	<div class="grid-items">
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-paliwo.png' %}" alt="Rodzaj paliwa" class="info-icon">
+			<span id="paliwo">{{ c.11|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-klima.png' %}" alt="Rodzaj klimatyzacji" class="info-icon">
+			<span>{{ c.18|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-drzwi-os.png' %}" alt="Ilość drzwi" class="info-icon">
+			<span>{{ c.17 }}-drzwiowy</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-nadwozie.png' %}" alt="Rodzaj napędu" class="info-icon">
+			<span>{{ c.21 }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-body-type.png' %}" alt="Rodzaj napedu" class="info-icon">
+			<span>{{ c.9|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-skrzynia.png' %}" alt="Rodzaj skrzyni biegów" class="info-icon">
+			<span>{{ c.10|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-srednie-spalanie.png' %}" alt="Średnie spalanie" class="info-icon">
+			<span><br>Spalanie miasto: {{ c.14 }}l.<br>Spalanie w trasie: {{ c.15 }}l.</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-poduszki.png' %}" alt="Ilość poduszek powietrznych" class="info-icon">
+			<span>{{ c.22 }} poduszek powietrznych</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-bagaznik.png' %}" alt="Pojemność bagażnika" class="info-icon">
+			<span>Poj. bagażnika: {{ c.16 }}l.</span>
+		</div>
+	</div>
+		</div>
+  <div class="car-display-more">
+	  <div class="button-more">
+
+
+		<a href="/cars/{{ c.4 }}/"><span>WIĘCEJ</span></a>
+		  <p class="price-1">Cena za dzień wynajmu: {{ c.3 }}</p>
+		<p class="price-2">Kaucja zwrotna: {{ c.2 }}</p>
+	</div>
+  </div>
+
+
+
+</div>
+    {% endfor %}
+    </div>
+</section>
+{% endblock %}

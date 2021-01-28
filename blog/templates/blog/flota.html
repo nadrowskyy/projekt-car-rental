@@ -1,0 +1,67 @@
+{% extends "blog/carrent_szablon.html" %}
+{% load static %}
+{% block content %}
+<section class="glowna-zawartosc">
+
+    <div class="center-cars wyswietlane">
+
+
+    {% for c in car %}
+        <div class="car-display">
+  <div class="car-display-image">
+	  <img src="{% static c.23 %}" alt="Car">
+	</div>
+  <div class="car-display-info">
+	<div class="car-name"><h1>{{ c.2 }} {{ c.1 }}</h1></div>
+	<div class="grid-items">
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-paliwo.png' %}" alt="Rodzaj paliwa" class="info-icon">
+			<span id="paliwo">{{ c.7|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-klima.png' %}" alt="Rodzaj klimatyzacji" class="info-icon">
+			<span>{{ c.14|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-drzwi-os.png' %}" alt="Ilość drzwi" class="info-icon">
+			<span>{{ c.13 }}-drzwiowy</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-nadwozie.png' %}" alt="Rodzaj napędu" class="info-icon">
+			<span>{{ c.17 }}</span>
+		</div>
+		<div class="info-item" alt="Rodzaj nadwozia">
+			<img src="{% static 'images/icons/icon-body-type.png' %}" alt="Rodzaj napedu" class="info-icon">
+			<span>{{ c.5|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-skrzynia.png' %}" alt="Rodzaj skrzyni biegów" class="info-icon">
+			<span>{{ c.6|lower|capfirst }}</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-srednie-spalanie.png' %}" alt="Średnie spalanie" class="info-icon">
+			<span><br>Spalanie miasto: {{ c.10 }}l.<br>Spalanie w trasie: {{ c.11 }}l.</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-poduszki.png' %}" alt="Ilość poduszek powietrznych" class="info-icon">
+			<span>{{ c.18 }} poduszek powietrznych</span>
+		</div>
+		<div class="info-item">
+			<img src="{% static 'images/icons/icon-bagaznik.png' %}" alt="Pojemność bagażnika" class="info-icon">
+			<span>Poj. bagażnika: {{ c.12 }}l.</span>
+		</div>
+	</div>
+		</div>
+  <div class="car-display-more">
+	  <div class="button-more">
+		<a href="/flota/detail/{{ c.0 }}/"><span>WIĘCEJ</span></a>
+	</div>
+  </div>
+
+
+
+</div>
+    {% endfor %}
+    </div>
+</section>
+{% endblock %}

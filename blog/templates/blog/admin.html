@@ -1,0 +1,60 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+
+
+}
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+.button3 {background-color: #F75348;}
+
+
+</style>
+
+</head>
+<body>
+<form method="get" action="/admin/orders">
+<button style="width:40%" class="button button1">Rezerwacje</button>
+</form>
+<form method="get" action="/admin/users">
+<button style="width:40%" class="button button1">Klienci</button>
+</form>
+<br><br>
+<form method="get" action="/admin/cars">
+<button style="width:40%" class="button button2">Flota</button>
+</form>
+<form method="get" action="/admin/prices">
+<button style="width:40%" class="button button2">Cennik</button>
+</form>
+<form method="get" action="/admin/insurance">
+<button style="width:40%" class="button button2">Ubezpieczenia</button>
+</form>
+
+<br><br>
+<form method="get" action="/">
+<button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+</body>
+</html>
+
+{%endblock%}

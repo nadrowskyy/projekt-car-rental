@@ -1,0 +1,213 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+
+.submit {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+
+input[type=text] {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-style: ridge;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+input[type=number] {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+select {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-style: groove;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+.button3 {background-color: #F75348;}
+.submit1 {background-color: #4CAF50;}
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<h3>Informacje podstawowe</h3>
+
+
+    <form method="POST">
+    {% csrf_token %}
+    <label for="model">Model</label>
+    <input type="text" id="model" name="model" value="{{ cars.2 }}">
+    <label for="mark">Marka</label>
+    <input type="text" id="mark" name="mark" value="{{ cars.1 }}">
+    <label for="segment">Wybierz segment: </label>
+    <select id="segment" name="segment">
+        <option value="{{ cars.3 }}" selected>{{ cars.3 }}</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+    </select>
+    <label for="ifrented">Zajętość</label>
+     <select id="ifrented" name="ifrented">
+        <option value={{ cars.4 }} selected>{{ cars.4 }}</option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+     </select>
+    <label for="bodytype">Typ nadwozia: </label>
+			<select id="bodytype" name="bodytype">
+                <option value="{{ cars.5 }}" selected>{{ cars.5 }}</option>
+				<option value="SEDAN">SEDAN</option>
+				<option value="COMBI">KOMBI</option>
+				<option value="COUPE">COUPE</option>
+				<option value="CABRIO">CABRIO</option>
+				<option value="HATCHBACK">HATCHBACK</option>
+				<option value="LIMUZYNA">LIMUZYNA</option>
+			</select>
+    <label for="transmission">Skrzynia biegów</label>
+    <select id="transmission" name="transmission">
+        <option value="{{ cars.6 }}" selected>{{ cars.6 }}</option>
+				<option value="AUTOMAT">AUTOMAT</option>
+				<option value="MANUAL">MANUAL</option>
+				<option value="SEMIMANUAL">SEMIMANUAL</option>
+			</select>
+    <label for="fuel">Paliwo</label>
+    <select id="fuel" name="fuel">
+        <option value="{{ cars.7 }}" selected>{{ cars.7 }}</option>
+				<option value="BENZYNA">BENZYNA</option>
+				<option value="DIESEL">DIESEL</option>
+				<option value="ELECTRIC">ELECTRIC</option>
+			</select>
+    <label for="seats">Liczba miejsc</label>
+    <input type="number" id="seats" name="seats" value="{{ cars.8 }}"> <br><br>
+
+    <h3>Informacje dodatkowe</h3>
+
+    <label for="city">Spalanie w mieście</label>
+    <input type="text" id="city" name="city" value="{{ cars_details.1 }}">
+    <label for="road">Spalanie w trasie</label>
+    <input type="text" id="road" name="road" value="{{ cars_details.2 }}">
+    <label for="trunk">Pojemność bagażnika</label>
+    <input type="number" id="trunk" name="trunk" value="{{ cars_details.3 }}">
+    <label for="doors">Liczba drzwi</label>
+    <input type="number" id="doors" name="doors" value="{{ cars_details.4 }}">
+    <label for="ac">Klimatyzacja</label>
+    <select id="ac" name="ac">
+        <option value="{{ cars_details.5 }}" selected>{{ cars_details.5 }}</option>
+				<option value="MANUALNA">MANUALNA</option>
+				<option value="AUTOMATYCZNA">AUTOMATYCZNA</option>
+    </select>
+    <label for="enginecap">Pojemność silnika</label>
+    <input type="number" id="enginecap" name="enginecap" value="{{ cars_details.6 }}">
+    <label for="enginepow">Moc silnika</label>
+    <input type="number" id="enginepow" name="enginepow" value="{{ cars_details.7 }}">
+    <label for="drive">Napęd</label>
+        <select id="drive" name="drive">
+        <option value="{{ cars_details.8 }}" selected>{{ cars_details.8 }}</option>
+				<option value="FWD">FWD</option>
+				<option value="RWD">RWD</option>
+                <option value="AWD">AWD</option>
+    </select>
+    <label for="airbags">Ilość poduszek powietrznych</label>
+    <input type="number" id="airbags" name="airbags" value="{{ cars_details.9 }}">
+    <label for="windows">Ilość szyb elektrycznych</label>
+    <input type="number" id="windows" name="windows" value="{{ cars_details.10 }}">
+    <label for="emirrors">Elektryczne lusterka</label>
+     <select id="emirrors" name="emirrors">
+        <option value={{ cars_details.10 }} selected>{{ cars_details.11 }}</option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+     </select>
+    <label for="hmirrors">Podgrzewane lusterka</label>
+     <select id="hmirrors" name="hmirrors">
+        <option value={{ cars_details.11 }} selected>{{ cars_details.12 }}</option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+     </select>
+        <label for="vin">Numer VIN</label>
+    <input type="text" id="vin" name="vin" value="{{ cars_details.13 }}">
+            <label for="image">Ścieżka do zdjęcia</label>
+    <input type="text" id="image" name="image" value="{{ cars_details.14 }}">
+                <label for="acentrum">Link do autocentrum</label>
+    <input type="text" id="acentrum" name="acentrum" value="{{ cars_details.15 }}">
+                <label for="desc">Opis</label><br>
+    <textarea style="width:40%" rows="10" cols="30" id="desc" name="desc">{{ cars_details.16 }}</textarea>
+
+    <input type="submit" style="width:40%" class="button submit1" value="Zapisz zmiany">
+    <input type="reset" style="width:40%" class="button button2">
+</form>
+<br>
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" id="delete" name="delete" value="true">
+    <input type="submit" style="width:40%" class="button button3" value="Usuń rekord">
+</form>
+
+
+<br><br><br><br>
+
+<form method="get" action="/admin/cars">
+    <button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+
+</body>
+</html>
+
+{%endblock%}

@@ -1,0 +1,133 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+
+.submit {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+}
+
+input[type=text] {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-style: ridge;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+input[type=number] {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+select {
+  width: 40%;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-style: groove;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+.button3 {background-color: #F75348;}
+.submit1 {background-color: #4CAF50;}
+</style>
+
+</head>
+<body>
+    <form method="POST">
+    {% csrf_token %}
+    <label for="UserID">Użytkownik</label>
+    <input type="text" id="UserID" name="UserID" value="{{ orders.1 }}"> <br>
+    <label for="CarID">Samochód</label>
+    <input type="text" id="CarID" name="CarID" value="{{ orders.2 }}"> <br>
+    <label for="WhenOrdered">Data zamówienia</label>
+    <input type="date" id="WhenOrdered" name="WhenOrdered" value="{{ orders.4 }}"> <br><br>
+    <label for="RentalDays">Okres wynajmu</label>
+    <input type="number" id="RentalDays" name="RentalDays" value="{{ orders.5 }}"> <br>
+    <label for="RentalStart">Początek wynajmu</label>
+    <input type="date" id="RentalStart" name="RentalStart" value="{{ orders.6 }}"> <br><br>
+    <label for="RentalEnd">Koniec wynajmu</label>
+    <input type="date" id="RentalEnd" name="RentalEnd" value="{{ orders.7 }}"> <br><br>
+    <label for="IfAbroad">Zagranica</label>
+    <select id="IfAbroad" name="IfAbroad">
+        <option value={{ orders.8 }} selected>{{ orders.8 }}</option>
+        <option value="1">1</option>
+        <option value="0">0</option>
+    </select>
+    <label for="IfPaid">Opłacone</label>
+    <select id="IfPaid" name="IfPaid">
+        <option value={{ orders.9 }} selected>{{ orders.9 }}</option>
+        <option value="1">1</option>
+        <option value="0">0</option>
+     </select>
+    <label for="RentalPrice">Cena</label>
+    <input type="number" id="RentalPrice" name="RentalPrice" value="{{ orders.10 }}">
+
+
+
+    <input type="submit" style="width:40%" class="button submit1" value="Zapisz zmiany">
+    <input type="reset" style="width:40%" class="button button2">
+</form>
+<br>
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" id="delete" name="delete" value="true">
+    <input type="submit" style="width:40%" class="button button3" value="Usuń rekord">
+</form>
+
+
+<br><br><br><br>
+
+<form method="get" action="/admin/orders">
+    <button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+
+</body>
+</html>
+
+{%endblock%}

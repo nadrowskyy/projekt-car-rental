@@ -1,0 +1,43 @@
+{% extends "blog/admin_szablon.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+.button {
+  position:relative;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  left: 29%;
+
+
+}
+
+.button1 {background-color: #4CAF50;}
+.button2 {background-color: #008CBA;}
+.button3 {background-color: #F75348;}
+
+
+</style>
+
+</head>
+<body>
+<h2 style="text-align: center;"><span style="color: #ff0000;"><strong>PANEL ADMINISTRACYJNY</strong></span></h2>
+<form method="get" action="/admin">
+<button style="width:40%" class="button button3">Powrót</button>
+</form>
+
+</body>
+</html>
+
+{%endblock%}
