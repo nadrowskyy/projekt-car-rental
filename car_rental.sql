@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Sty 2021, 17:15
+-- Czas generowania: 28 Sty 2021, 17:58
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.2.34
 
@@ -65,7 +65,9 @@ INSERT INTO `additional_services` (`OrderID`, `IfAbroad`, `IfChildSeat`, `IfUsed
 (3, 1, 0, 1, 3),
 (4, 1, 1, 0, 2),
 (5, 1, 1, 1, 1),
-(6, 1, 1, 1, 1);
+(6, 1, 1, 1, 1),
+(7, 1, 0, 0, 1),
+(8, 1, 0, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,7 @@ CREATE TABLE `cars` (
 
 INSERT INTO `cars` (`CarID`, `Model`, `Mark`, `SegmentID`, `IfRented`, `BodyType`, `TransmissionType`, `FuelType`, `SeatsNumber`) VALUES
 (1, 'Citigo', 'Skoda', 1, 1, 'HATCHBACK', 'MANUAL', 'BENZYNA', 4),
-(2, 'Aygo', 'Toyota', 1, 0, 'HATCHBACK', 'AUTOMAT', 'BENZYNA', 4),
+(2, 'Aygo', 'Toyota', 1, 1, 'HATCHBACK', 'AUTOMAT', 'BENZYNA', 4),
 (3, 'Ford', 'Fiesta', 2, 0, 'HATCHBACK', 'MANUAL', 'BENZYNA', 5),
 (4, 'Megane', 'Renault', 3, 0, 'HATCHBACK', 'MANUAL', 'BENZYNA', 5),
 (5, 'Supra', 'Toyota', 8, 0, 'COUPE', 'AUTOMAT', 'BENZYNA', 2),
@@ -218,7 +220,7 @@ INSERT INTO `cars` (`CarID`, `Model`, `Mark`, `SegmentID`, `IfRented`, `BodyType
 (17, 'Avensis', 'Toyora', 5, 0, 'SEDAN', 'MANUAL', 'BENZYNA', 5),
 (18, 'Astra', 'Opel', 3, 1, 'HATCHBACK', 'MANUAL', 'DIESEL', 5),
 (19, 'R8', 'Audi', 8, 0, 'COUPE', 'AUTOMAT', 'BENZYNA', 2),
-(20, 'Citigo', 'Skoda', 1, 0, 'HATCHBACK', 'MANUAL', 'BENZYNA', 4),
+(20, 'Citigo', 'Skoda', 1, 1, 'HATCHBACK', 'MANUAL', 'BENZYNA', 4),
 (21, 'S90', 'Volvo', 6, 0, 'LIMUZYNA', 'AUTOMAT', 'DIESEL', 5),
 (22, 'i30', 'Hyundai', 3, 0, 'COMBI', 'MANUAL', 'DIESEL', 5),
 (23, 'Aygo', 'Toyota', 1, 1, 'HATCHBACK', 'AUTOMAT', 'BENZYNA', 4),
@@ -397,15 +399,6 @@ CREATE TABLE `django_session` (
   `expire_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
---
--- Zrzut danych tabeli `django_session`
---
-
-INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('btyz6nup34bphcgz47oh6mwv92wjp5hq', 'YzQxY2M4MGMwNWZiMzVmODA0ZjFiOWVhOGJjMWU5ZDVkYjcwODA5NDp7InRlc2NpayI6InJhemR3YXRyenkifQ==', '2021-01-18 19:06:01.000000'),
-('d6jdgr888wyh7eoy43fi1s3y2ox8z59j', 'MmQyOTBkOTlkMGYzMDZiYjhhMmYyMGRmZTRlOWMyMDFjMDAwMGYxMTp7InBpY2siOiIyMDIxLTAxLTE1IiwicmV0dXJuIjoiMjAyMS0wMS0xNiIsImJhc2ljX3ByaWNlIjoxNTAwLCJkZXBvc2l0X3ByaWNlIjozMDAwLCJwYWNrZXQtaWQiOjMsInBhY2tldC1uYW1lIjoiUm96c3plcnpvbnkgRVUiLCJwYWNrZXQtcHJpY2UiOjk5LCJleHRyYV9zZWF0X3ByaWNlIjowLCJpZl9hYnJvYWRfcHJpY2UiOjAsImlmX21vcmVfdXNlcnNfcHJpY2UiOjAsInVzZXJfaWQiOjIsImNhcl9pZCI6MzUsIm9yZGVyX2lkIjoyfQ==', '2021-01-29 21:00:29.000000'),
-('pwwanqb43b2p4l7o3h6a1eagauq6y0ju', '.eJxdjtEKwjAMRX9F-rxBO4eoXyH-QMnaiEVcR9oxV_HfTXWbw7dwTnJvniJiMO4mjoIg2QEipVEUonMms0pWqpSqrPbMCGNP7Zoe8iaYG8bSXFmcfQoJKfl23NRZ4iMS6IAQP2dM3EVDQx4sg3oCd0-o-4AUGCr5C23hjoxO3oYIgx_Gn-rIGXZy3aEnWMlVzwxr-dc1CyWXUMdfqUI0EJyZ9YG1xc4Ht-RvJbOcofPBrhAGvmOO8mRn8XoDkVhwEg:1l59TW:RfhciVGG8DK7Hu7XsRjPO8CXY8yhuluJVMN6w_ebt7Y', '2021-02-11 15:44:50.000000');
-
 -- --------------------------------------------------------
 
 --
@@ -431,7 +424,9 @@ INSERT INTO `door_to_door` (`OrderID`, `Street`, `HouseNumber`, `FlatNumber`, `P
 (3, 'Krapkowicka', '11', '2', '54-310', 'Hollywood'),
 (4, 'Opolska', '65', '12', '54-310', 'Wrocław'),
 (5, '', '', '', '', ''),
-(6, 'Green Valey', '23', '12', '54-211', 'Włochy');
+(6, 'Green Valey', '23', '12', '54-211', 'Włochy'),
+(7, '', '', '', '', ''),
+(8, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -485,7 +480,9 @@ INSERT INTO `orders` (`OrderID`, `UserID`, `CarID`, `OrderNumber`, `WhenOrdered`
 (3, 3, 34, 261096, '2021-01-17 11:05:31', 5, '2021-01-26', '2021-01-31', 1, 1, 3399),
 (4, 4, 28, 916360, '2021-01-21 17:23:51', 5, '2021-01-26', '2021-01-31', 1, 1, 1359),
 (5, 5, 1, 345146, '2021-01-28 12:56:08', 1, '2021-01-28', '2021-01-29', 1, 1, 460),
-(6, 6, 10, 794940, '2021-01-28 16:44:49', 1, '2021-01-28', '2021-01-29', 1, 1, 460);
+(6, 6, 10, 794940, '2021-01-28 16:44:49', 1, '2021-01-28', '2021-01-29', 1, 1, 460),
+(7, 7, 2, 786854, '2021-01-28 17:52:00', 1, '2021-01-28', '2021-01-29', 1, 1, 430),
+(8, 8, 20, 760272, '2021-01-28 17:58:05', 1, '2021-01-28', '2021-01-29', 1, 1, 529);
 
 -- --------------------------------------------------------
 
@@ -510,7 +507,9 @@ INSERT INTO `prices_for_additional_services` (`OrderId`, `UsingAbroad`, `ChildSe
 (3, 40, 0, 10),
 (4, 40, 20, 0),
 (5, 40, 20, 10),
-(6, 40, 20, 10);
+(6, 40, 20, 10),
+(7, 40, 0, 0),
+(8, 40, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -567,7 +566,9 @@ INSERT INTO `users` (`UserID`, `Name`, `Surname`, `Email`, `Phone`, `Age`, `Sex`
 (3, 'Eden', 'Mark', 'nadrowskia2@gmail.com', '123123123', 24, 'MAN', 'B', 5),
 (4, 'Tomasz', 'Carlos', 'caviko2021@loopsnow.com', '123123213', 21, 'MAN', 'B', 3),
 (5, 'Tomasz', 'Nadrowski', 'nadrowskia2@gmail.com', '123123123', 21, 'MAN', 'B', 2),
-(6, 'Tomasz', 'Jan', 'nadrowskia2@gmail.com', '123213123', 21, 'MAN', 'B', 2);
+(6, 'Tomasz', 'Jan', 'nadrowskia2@gmail.com', '123213123', 21, 'MAN', 'B', 2),
+(7, 'Tomasz', 'Nowak', 'nadrowskia2@gmail.com', '123123123', 21, 'MAN', 'B', 2),
+(8, 'Tomasz', 'Nadrowski', 'nadrowskia2@gmail.com', '123123123', 122, 'MAN', 'B', 3);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -784,7 +785,7 @@ ALTER TABLE `insurance_packet`
 -- AUTO_INCREMENT dla tabeli `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT dla tabeli `segment_price`
@@ -796,7 +797,7 @@ ALTER TABLE `segment_price`
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Ograniczenia dla zrzutów tabel

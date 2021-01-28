@@ -383,6 +383,8 @@ def cars(request):
     if request.method == 'POST':
         pick_date = request.POST.get('pick')
         return_date = request.POST.get('return')
+        print(pick_date)
+        print(return_date)
         request.session['pick'] = pick_date
         request.session['return'] = return_date
         pick_session = request.session.get('pick')
@@ -677,15 +679,17 @@ def order_finish(request):
     WHERE users.UserID = {}'''.format(user_id))
 
     e_mail = cursor.fetchall()[0][0]
-
-    m = EmailMessage(
-        subject='Carnet Order',
-        body='Szczegóły zamówienia w załączniku',
-        from_email='carnetdjango@gmail.com',
-        to=[e_mail],
-    )
-    m.attach('zamowienie', result.getvalue(), 'application/pdf')
-    m.send()
+    
+    
+    # Enter email credentials in settings.py to send emails and uncomment code below
+    #m = EmailMessage(
+    #    subject='Carnet Order',
+    #    body='Szczegóły zamówienia w załączniku',
+    #    from_email='carnetdjango@gmail.com',
+    #    to=[e_mail],
+    #)
+    #m.attach('zamowienie', result.getvalue(), 'application/pdf')
+    #.send()
 
     # EMAIL SENDING
 
