@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from blog.views import main, cars, faq, rent, contact, cars_detail, insurance, order, order_finish, flota, \
 admin, admin_additional, admin_cars, admin_insurance, admin_orders, admin_users, cars_edit, users_edit, user_detail, \
 orders_edit, admin_prices, prices_edit, insurance_edit, admin_dtd, dtd_edit, flota_detail, accident
@@ -53,6 +53,7 @@ urlpatterns = [
     path('admin/dtd/', admin_dtd, name='admin_dtd'),
     path('admin/dtd/<int:link>/', dtd_edit, name='dtd_edit'),
     path('user/<int:link>/', user_detail, name='user_detail'),
+    path('api/', include('api.urls')),
 ]
 
 if settings.DEBUG:
