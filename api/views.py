@@ -1,6 +1,15 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
-def apiOverfiew(request):
-    return JsonResponse("API BASE POINT", safe=False)
+@api_view(['GET'])
+def api_overview(request):
+    api_urls = {
+        'Cars List':'/cars-list/',
+        'Detail Car':'/cars-detail/<int:pk>/',
+    }
+
+    return Response(api_urls)
+
