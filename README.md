@@ -1,3 +1,9 @@
+### CONTRIBUTORS:
+https://github.com/nadrowskyy/
+https://github.com/rabarbartek
+https://github.com/mrudawski
+
+
 HOW DOES THIS WORK?
 
 *	After downloading project we need to create virtaul env and install dependencies from requirements.txt using command: `pip install -r requirements.txt`
