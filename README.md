@@ -1,7 +1,8 @@
 ### CONTRIBUTORS:
-https://github.com/nadrowskyy/
-https://github.com/rabarbartek
-https://github.com/mrudawski
+ - https://github.com/nadrowskyy/
+ - https://github.com/rabarbartek
+ - https://github.com/mrudawski
+ - https://github.com/adrianosajda
 
 
 HOW DOES THIS WORK?
